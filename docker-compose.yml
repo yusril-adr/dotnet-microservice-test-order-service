@@ -1,0 +1,17 @@
+version: '2'
+services:
+  nats:
+    image: nats:alpine
+    container_name: dotnet-ms-nats
+    command: -p 4222 -js
+    ports:
+      - "4222:4222"
+      - "5222:5222"
+  mssql:
+    image: mcr.microsoft.com/mssql/server:latest
+    container_name: dotnet-ms-mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: rahasia123!
+    ports: 
+      - "1433:1433"

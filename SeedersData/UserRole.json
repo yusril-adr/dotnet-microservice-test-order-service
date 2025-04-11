@@ -1,0 +1,10 @@
+[
+	{
+		"email": "admin@dot.co.id",
+		"roleKey": "super-admin"
+	},
+	{
+		"email": "user@dot.co.id",
+		"roleKey": "admin"
+	}
+]

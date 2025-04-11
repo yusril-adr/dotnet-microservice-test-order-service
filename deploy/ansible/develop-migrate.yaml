@@ -1,0 +1,20 @@
+---
+- name: deploy dev environment to sandbox
+  hosts: develop
+  remote_user: ajeng
+  become: yes
+  become_user: project
+  gather_facts: no
+  environment:
+    DOCKER_TIMEOUT: 600
+  vars:
+    working_directory: "/var/www/project/boilerplates/dotnet-service-boilerplate"
+
+  tasks:
+  - name: run migration
+    community.docker.docker_compose:
+      project_src: "{{ working_directory }}"
+      state: present
+      pull: true
+      services:
+        - "migrate"

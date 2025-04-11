@@ -1,0 +1,10 @@
+[
+	{
+		"name": "Super Admin",
+		"key": "super-admin"
+	},
+	{
+		"name": "Admin",
+		"key": "admin"
+	}
+]

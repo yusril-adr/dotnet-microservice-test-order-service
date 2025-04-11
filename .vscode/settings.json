@@ -1,0 +1,10 @@
+{
+	"github.copilot.chat.codeGeneration.instructions": [
+		{
+			"file": "/copilot-prompts/copilot-instructions.md"
+		},
+		{
+			"file": "/dbdocs/database.dbml"
+		}
+	]
+}

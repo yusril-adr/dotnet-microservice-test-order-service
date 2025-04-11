@@ -1,0 +1,12 @@
+[
+	{
+		"name": "Super Admin",
+		"email": "admin@dot.co.id",
+		"password": "Rahasia123!"
+	},
+	{
+		"name": "User",
+		"email": "user@dot.co.id",
+		"password": "Rahasia123!"
+	}
+]

@@ -1,0 +1,98 @@
+[
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "user-view"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "user-create"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "user-update"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "user-delete"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "role-view"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "role-create"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "role-update"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "role-delete"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "permission-view"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "permission-create"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "permission-update"
+    },
+    {
+        "roleKey": "super-admin",
+        "permissionKey": "permission-delete"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "user-view"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "user-create"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "user-update"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "user-delete"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "role-view"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "role-create"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "role-update"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "role-delete"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "permission-view"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "permission-create"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "permission-update"
+    },
+    {
+        "roleKey": "admin",
+        "permissionKey": "permission-delete"
+    }
+]

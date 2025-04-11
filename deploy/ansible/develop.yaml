@@ -1,0 +1,44 @@
+---
+- name: deploy dev environment to sandbox
+  hosts: develop
+  remote_user: ajeng
+  become: yes
+  become_user: project
+  gather_facts: no
+  environment:
+    DOCKER_TIMEOUT: 600
+  vars:
+    working_directory: "/var/www/project/boilerplates/dotnet-service-boilerplate"
+    deploy_version: "{{ lookup('ansible.builtin.env', 'CI_COMMIT_SHORT_SHA') }}"
+    container_image_tag: "develop{{ deploy_version }}"
+
+  tasks:
+  - name: update docker compose env value
+    ansible.builtin.lineinfile:
+      path: "{{ working_directory }}/.env"
+      regexp: "^IMAGE_TAG="
+      line: "IMAGE_TAG={{ container_image_tag }}"
+
+  - name: update docker compose
+    community.docker.docker_compose:
+      project_src: "{{ working_directory }}"
+      services:
+        - "app"
+
+  - name: waiting deployment ready
+    ansible.builtin.uri:
+      url: "https://dotnet-service-blrplt.dot.co.id/health"
+      validate_certs: no
+      status_code: 200
+    register: result
+    until: 'result.status == 200'
+    retries: 60
+    delay: 10
+
+  - name: delete old image
+    community.docker.docker_prune:
+      containers: true
+      images: true
+      images_filters:
+        dangling: false
+    ignore_errors: True
