@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Options;
 
-namespace DotNetService.Infrastructure.Logging
+namespace DotnetOrderService.Infrastructure.Logging
 {
     public class ConsoleLoggingFormatter(IOptions<ConsoleFormatterOptions> options) : ConsoleFormatter("ConsoleLoggingFormatter")
     {

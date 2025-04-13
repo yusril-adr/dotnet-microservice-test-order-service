@@ -1,4 +1,4 @@
-namespace DotNetService.Infrastructure.Email
+namespace DotnetOrderService.Infrastructure.Email
 {
     public class EmailConfig
     {

@@ -1,6 +1,6 @@
 using Microsoft.Data.SqlClient;
 
-namespace DotNetService.Infrastructure.Queues
+namespace DotnetOrderService.Infrastructure.Queues
 {
     public class ConnectionPoolCheckerService(ILogger<ConnectionPoolCheckerService> logger, string connectionString, int interval) : BackgroundService
     {

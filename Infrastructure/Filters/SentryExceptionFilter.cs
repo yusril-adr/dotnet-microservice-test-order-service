@@ -1,8 +1,8 @@
-using DotNetService.Infrastructure.Exceptions;
+using DotnetOrderService.Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Sentry.Extensibility;
 
-namespace DotNetService.Infrastructure.Filters
+namespace DotnetOrderService.Infrastructure.Filters
 {
     public class SentryExceptionFilter : IExceptionFilter
     {

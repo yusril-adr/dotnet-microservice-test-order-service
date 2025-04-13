@@ -17,6 +17,6 @@ RUN apt-get update \
   && apt-get install -y curl
 COPY --from=build-backend /app/out .
 
-CMD ["dotnet", "DotNetService.dll"]
+CMD ["dotnet", "DotnetOrderService.dll"]
 
 EXPOSE 8080

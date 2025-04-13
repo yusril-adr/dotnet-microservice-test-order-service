@@ -1,4 +1,4 @@
-namespace DotNetService.Constants.Event
+namespace DotnetOrderService.Constants.Event
 {
     public enum NATsEventCommon
     {

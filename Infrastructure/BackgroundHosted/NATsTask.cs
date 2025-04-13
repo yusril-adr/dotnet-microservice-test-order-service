@@ -1,9 +1,9 @@
 
-using DotNetService.Constants.Event;
-using DotNetService.Domain.Logging.Listeners;
-using DotNetService.Infrastructure.Integrations.NATs;
+using DotnetOrderService.Constants.Event;
+using DotnetOrderService.Domain.Logging.Listeners;
+using DotnetOrderService.Infrastructure.Integrations.NATs;
 
-namespace DotNetService.Infrastructure.BackgroundHosted
+namespace DotnetOrderService.Infrastructure.BackgroundHosted
 {
     public class NATsTask(
         IServiceScopeFactory serviceScopeFactory,

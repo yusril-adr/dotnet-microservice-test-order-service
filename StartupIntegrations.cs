@@ -1,8 +1,8 @@
-using DotNetService.Infrastructure.BackgroundHosted;
-using DotNetService.Infrastructure.Integrations.Http;
-using DotNetService.Infrastructure.Integrations.NATs;
+using DotnetOrderService.Infrastructure.BackgroundHosted;
+using DotnetOrderService.Infrastructure.Integrations.Http;
+using DotnetOrderService.Infrastructure.Integrations.NATs;
 
-namespace DotNetService
+namespace DotnetOrderService
 {
     public partial class Startup
     {

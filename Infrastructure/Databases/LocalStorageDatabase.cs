@@ -1,10 +1,10 @@
 
-using DotNetService.Infrastructure.Exceptions;
+using DotnetOrderService.Infrastructure.Exceptions;
 using Hanssens.Net;
 using Newtonsoft.Json;
 using StackExchange.Redis;
 
-namespace DotNetService.Infrastructure.Databases
+namespace DotnetOrderService.Infrastructure.Databases
 {
     public class LocalStorageDatabase(
         IConfiguration config

@@ -1,6 +1,6 @@
-using DotNetService.Domain.Logging.Listeners;
+using DotnetOrderService.Domain.Logging.Listeners;
 
-namespace DotNetService
+namespace DotnetOrderService
 {
     public partial class Startup
     {

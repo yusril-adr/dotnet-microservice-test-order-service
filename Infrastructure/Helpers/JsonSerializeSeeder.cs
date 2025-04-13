@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace DotNetService.Infrastructure.Helpers
+namespace DotnetOrderService.Infrastructure.Helpers
 {
   public static class JsonSerializeSeeder
   {

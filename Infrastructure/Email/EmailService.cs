@@ -3,7 +3,7 @@ using MailKit.Net.Smtp;
 using MailKit.Security;
 using MimeKit;
 
-namespace DotNetService.Infrastructure.Email
+namespace DotnetOrderService.Infrastructure.Email
 {
     public class EmailService(IConfiguration configuration, ILogger<EmailService> logger)
     {

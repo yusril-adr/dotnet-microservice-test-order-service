@@ -1,10 +1,10 @@
-using DotNetService.Constants.Event;
-using DotNetService.Constants.Logger;
-using DotNetService.Infrastructure.Integrations.NATs;
-using DotNetService.Infrastructure.Shareds;
+using DotnetOrderService.Constants.Event;
+using DotnetOrderService.Constants.Logger;
+using DotnetOrderService.Infrastructure.Integrations.NATs;
+using DotnetOrderService.Infrastructure.Shareds;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace DotNetService.Infrastructure.Events
+namespace DotnetOrderService.Infrastructure.Events
 {
     public class PublishNATsEndpointCallEvent(
         NATsIntegration natsIntegration,

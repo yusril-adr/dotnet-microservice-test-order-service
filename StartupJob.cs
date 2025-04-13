@@ -1,12 +1,9 @@
-using DotNetService.Infrastructure.Jobs;
-
-namespace DotNetService
+namespace DotnetOrderService
 {
     public partial class Startup
     {
         public void Jobs(IServiceCollection services)
         {
-            services.AddScoped<NotificationHouseKeepingJob>();
         }
     }
 }

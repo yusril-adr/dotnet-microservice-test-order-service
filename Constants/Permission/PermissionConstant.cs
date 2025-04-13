@@ -2,7 +2,7 @@
   ! Important: The permission constant should be sync with "/SeedersData/Permission.json"
   ---------------------
 */
-namespace DotNetService.Constants.Permission
+namespace DotnetOrderService.Constants.Permission
 {
   public static class PermissionConstant
   {

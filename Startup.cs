@@ -5,27 +5,26 @@ using Polly.Extensions.Http;
 using FluentValidation.AspNetCore;
 using StackExchange.Redis;
 using Microsoft.EntityFrameworkCore;
-using DotNetService.Infrastructure.Integrations.Http;
-using DotNetService.Constants.Logger;
+using DotnetOrderService.Infrastructure.Integrations.Http;
+using DotnetOrderService.Constants.Logger;
 using Microsoft.AspNetCore.DataProtection;
-using DotNetService.Infrastructure.Middlewares;
-using DotNetService.Infrastructure.Filters;
+using DotnetOrderService.Infrastructure.Middlewares;
+using DotnetOrderService.Infrastructure.Filters;
 using Microsoft.AspNetCore.Mvc;
 using NATS.Client.Hosting;
 using NATS.Client.Core;
-using DotNetService.Infrastructure.Queues;
-using DotNetService.Infrastructure.BackgroundHosted;
+using DotnetOrderService.Infrastructure.Queues;
+using DotnetOrderService.Infrastructure.BackgroundHosted;
 using System.Net;
-using DotNetService.Infrastructure.Exceptions;
-using DotNetService.Infrastructure.Databases;
-using DotNetService.Infrastructure.ModelBinder;
+using DotnetOrderService.Infrastructure.Exceptions;
+using DotnetOrderService.Infrastructure.Databases;
+using DotnetOrderService.Infrastructure.ModelBinder;
 using Quartz;
-using DotNetService.Infrastructure.Jobs;
-using DotNetService.Infrastructure.Logging;
+using DotnetOrderService.Infrastructure.Logging;
 using Microsoft.Extensions.Logging.Console;
-using DotNetService.Infrastructure.Email;
+using DotnetOrderService.Infrastructure.Email;
 
-namespace DotNetService
+namespace DotnetOrderService
 {
     public partial class Startup(IConfiguration configuration)
     {
@@ -103,7 +102,7 @@ namespace DotNetService
 
             var poolSize = Configuration["ConnectionPoolSize:DefaultConnection1"] != null ? int.Parse(Configuration["ConnectionPoolSize:DefaultConnection1"]) : 50;
 
-            services.AddDbContextPool<DotnetServiceDBContext>(
+            services.AddDbContextPool<DotnetOrderServiceDBContext>(
                 options => options.UseSqlServer(Configuration["ConnectionString:DefaultConnection1"] ?? "").UseSnakeCaseNamingConvention(),
                 poolSize
             );
@@ -143,7 +142,7 @@ namespace DotNetService
             if (IsRedisEnable)
             {
                 services.AddDataProtection()
-                    .SetApplicationName(Configuration["App:Name"] ?? "DotNetService")
+                    .SetApplicationName(Configuration["App:Name"] ?? "DotnetOrderService")
                     .SetDefaultKeyLifetime(TimeSpan.FromDays(60))
                     .PersistKeysToStackExchangeRedis(ConnectionMultiplexer.Connect(redisConnectionString), Configuration["App:DataProtectionKey"]);
 
@@ -164,16 +163,16 @@ namespace DotNetService
             services.AddQuartz(q =>
             {
                 // base Quartz scheduler, job and trigger configuration
-                var jobKey = new JobKey("NotificationHouseKeeping");
-                q.AddJob<NotificationHouseKeepingJob>(opts => opts.WithIdentity(jobKey));
+                // var jobKey = new JobKey("NotificationHouseKeeping");
+                // q.AddJob<NotificationHouseKeepingJob>(opts => opts.WithIdentity(jobKey));
 
-                q.AddTrigger(opts => opts
-                    .ForJob(jobKey)
-                    .WithIdentity("NotificationHouseKeepingTrigger")
-                    // Schedule every first day of the month at 00:00
-                    .WithCronSchedule("0 0 0 1 * ?")
-                    )
-                    ;
+                // q.AddTrigger(opts => opts
+                //     .ForJob(jobKey)
+                //     .WithIdentity("NotificationHouseKeepingTrigger")
+                //     // Schedule every first day of the month at 00:00
+                //     .WithCronSchedule("0 0 0 1 * ?")
+                //     )
+                //     ;
             });
 
             // ASP.NET Core hosting
@@ -207,7 +206,7 @@ namespace DotNetService
 
             app.UseRouting();
 
-            app.UseMiddleware<AuthorizationMiddleware>();
+            // app.UseMiddleware<AuthorizationMiddleware>();
 
             app.UseResponseCaching();
 

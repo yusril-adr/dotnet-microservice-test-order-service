@@ -1,4 +1,4 @@
-namespace DotNetService.Domain.File.Dto
+namespace DotnetOrderService.Domain.File.Dto
 {
     public class FileDto
     {

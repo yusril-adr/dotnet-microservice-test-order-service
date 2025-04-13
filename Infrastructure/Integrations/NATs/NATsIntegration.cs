@@ -1,13 +1,13 @@
-using DotNetService.Constants.Logger;
-using DotNetService.Infrastructure.Shareds;
+using DotnetOrderService.Constants.Logger;
+using DotnetOrderService.Infrastructure.Shareds;
 using NATS.Client.Core;
-using DotNetService.Constants.Event;
-using DotNetService.Infrastructure.Subscriptions;
+using DotnetOrderService.Constants.Event;
+using DotnetOrderService.Infrastructure.Subscriptions;
 using NATS.Client.JetStream;
 using NATS.Client.JetStream.Models;
-using DotNetService.Infrastructure.Exceptions;
+using DotnetOrderService.Infrastructure.Exceptions;
 
-namespace DotNetService.Infrastructure.Integrations.NATs
+namespace DotnetOrderService.Infrastructure.Integrations.NATs
 {
     public class NATsIntegration
     {

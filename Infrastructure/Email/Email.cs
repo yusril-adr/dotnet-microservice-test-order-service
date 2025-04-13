@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Html;
 using MimeKit;
 using MimeKit.Text;
 
-namespace DotNetService.Infrastructure.Email
+namespace DotnetOrderService.Infrastructure.Email
 {
     public class Email
     {

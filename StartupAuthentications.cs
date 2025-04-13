@@ -1,14 +1,12 @@
-using DotNetService.Domain.Auth.Util;
-using DotNetService.Infrastructure.Databases;
+using DotnetOrderService.Infrastructure.Databases;
 
-namespace DotNetService
+namespace DotnetOrderService
 {
     public partial class Startup
     {
         public void Authentications(IServiceCollection services)
         {
             services.AddSingleton<LocalStorageDatabase>();
-            services.AddSingleton<AuthUtil>();
         }
     }
 }
