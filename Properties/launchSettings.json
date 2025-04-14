@@ -17,7 +17,7 @@
 				"ASPNETCORE_ENVIRONMENT": "Development"
 			}
 		},
-		"DotnetOrderService": {
+		"DotNetOrderService": {
 			"commandName": "Project",
 			"launchBrowser": false,
 			"launchUrl": "api",

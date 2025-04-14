@@ -1,8 +1,8 @@
-using DotnetOrderService.Infrastructure.Helpers;
+using DotNetOrderService.Infrastructure.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotnetOrderService.Http.API.Health
+namespace DotNetOrderService.Http.API.Health
 {
     [Route("health")]
     [ApiController]

@@ -4,11 +4,11 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Web;
-using DotnetOrderService.Constants.Logger;
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Constants.Logger;
+using DotNetOrderService.Infrastructure.Shareds;
 using JsonConvert = Newtonsoft.Json.JsonConvert;
 
-namespace DotnetOrderService.Infrastructure.Integrations.Http
+namespace DotNetOrderService.Infrastructure.Integrations.Http
 {
     public class HttpIntegration(
         ILoggerFactory loggerFactory,

@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Constants.Logger
+namespace DotNetOrderService.Constants.Logger
 {
     public class LoggerConstant
     {

@@ -1,6 +1,6 @@
-using DotnetOrderService.Infrastructure.Databases;
+using DotNetOrderService.Infrastructure.Databases;
 
-namespace DotnetOrderService
+namespace DotNetOrderService
 {
     public partial class Startup
     {

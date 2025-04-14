@@ -1,4 +1,4 @@
-namespace DotnetOrderService
+namespace DotNetOrderService
 {
     public partial class Startup
     {

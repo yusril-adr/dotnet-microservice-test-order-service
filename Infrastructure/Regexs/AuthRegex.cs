@@ -1,5 +1,5 @@
 
-namespace DotnetOrderService.Infrastructure.Regexs
+namespace DotNetOrderService.Infrastructure.Regexs
 {
     public static class AuthRegex
     {

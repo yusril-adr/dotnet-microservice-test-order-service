@@ -1,11 +1,11 @@
-using DotnetOrderService.Domain.Order.Repositories;
-using DotnetOrderService.Infrastructure.Exceptions;
-using DotnetOrderService.Domain.Order.Dtos;
-using DotnetOrderService.Infrastructure.Dtos;
-using DotnetOrderService.Domain.Order.Messages;
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Domain.Order.Repositories;
+using DotNetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Domain.Order.Dtos;
+using DotNetOrderService.Infrastructure.Dtos;
+using DotNetOrderService.Domain.Order.Messages;
+using DotNetOrderService.Infrastructure.Shareds;
 
-namespace DotnetOrderService.Domain.Order.Services
+namespace DotNetOrderService.Domain.Order.Services
 {
     public class OrderService(
         OrderQueryRepository orderQueryRepository,

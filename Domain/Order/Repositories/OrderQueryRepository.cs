@@ -1,18 +1,18 @@
 using System.Linq.Expressions;
-using DotnetOrderService.Infrastructure.Dtos;
-using DotnetOrderService.Infrastructure.Databases;
-using DotnetOrderService.Infrastructure.Repositories;
+using DotNetOrderService.Infrastructure.Dtos;
+using DotNetOrderService.Infrastructure.Databases;
+using DotNetOrderService.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using DotnetOrderService.Domain.Order.Dtos;
+using DotNetOrderService.Domain.Order.Dtos;
 
-namespace DotnetOrderService.Domain.Order.Repositories
+namespace DotNetOrderService.Domain.Order.Repositories
 {
     public partial class OrderQueryRepository(
-        DotnetOrderServiceDBContext context
+        DotNetOrderServiceDBContext context
     )
     {
-        private readonly DotnetOrderServiceDBContext _context = context;
+        private readonly DotNetOrderServiceDBContext _context = context;
 
         public async Task<PaginationResult<Models.Order>> Pagination(OrderQueryDto queryParams)
         {

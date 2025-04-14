@@ -1,7 +1,7 @@
-using DotnetOrderService.Domain.File.Dto;
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Domain.File.Dto;
+using DotNetOrderService.Infrastructure.Shareds;
 
-namespace DotnetOrderService.Domain.File.Services
+namespace DotNetOrderService.Domain.File.Services
 {
     public class FileService(StorageService storageService)
     {

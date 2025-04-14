@@ -1,6 +1,6 @@
-using DotnetOrderService.Constants.Order;
+using DotNetOrderService.Constants.Order;
 
-namespace DotnetOrderService.Models
+namespace DotNetOrderService.Models
 {
     public class Order : BaseModel
     {

@@ -1,6 +1,6 @@
-using DotnetOrderService.Domain.Order.Repositories;
+using DotNetOrderService.Domain.Order.Repositories;
 
-namespace DotnetOrderService
+namespace DotNetOrderService
 {
     public partial class Startup
     {

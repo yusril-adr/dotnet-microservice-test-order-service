@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Constants.Event
+namespace DotNetOrderService.Constants.Event
 {
     public static class LoggingCallEventConstant
     {

@@ -5,26 +5,26 @@ using Polly.Extensions.Http;
 using FluentValidation.AspNetCore;
 using StackExchange.Redis;
 using Microsoft.EntityFrameworkCore;
-using DotnetOrderService.Infrastructure.Integrations.Http;
-using DotnetOrderService.Constants.Logger;
+using DotNetOrderService.Infrastructure.Integrations.Http;
+using DotNetOrderService.Constants.Logger;
 using Microsoft.AspNetCore.DataProtection;
-using DotnetOrderService.Infrastructure.Middlewares;
-using DotnetOrderService.Infrastructure.Filters;
+using DotNetOrderService.Infrastructure.Middlewares;
+using DotNetOrderService.Infrastructure.Filters;
 using Microsoft.AspNetCore.Mvc;
 using NATS.Client.Hosting;
 using NATS.Client.Core;
-using DotnetOrderService.Infrastructure.Queues;
-using DotnetOrderService.Infrastructure.BackgroundHosted;
+using DotNetOrderService.Infrastructure.Queues;
+using DotNetOrderService.Infrastructure.BackgroundHosted;
 using System.Net;
-using DotnetOrderService.Infrastructure.Exceptions;
-using DotnetOrderService.Infrastructure.Databases;
-using DotnetOrderService.Infrastructure.ModelBinder;
+using DotNetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Infrastructure.Databases;
+using DotNetOrderService.Infrastructure.ModelBinder;
 using Quartz;
-using DotnetOrderService.Infrastructure.Logging;
+using DotNetOrderService.Infrastructure.Logging;
 using Microsoft.Extensions.Logging.Console;
-using DotnetOrderService.Infrastructure.Email;
+using DotNetOrderService.Infrastructure.Email;
 
-namespace DotnetOrderService
+namespace DotNetOrderService
 {
     public partial class Startup(IConfiguration configuration)
     {
@@ -102,7 +102,7 @@ namespace DotnetOrderService
 
             var poolSize = Configuration["ConnectionPoolSize:DefaultConnection1"] != null ? int.Parse(Configuration["ConnectionPoolSize:DefaultConnection1"]) : 50;
 
-            services.AddDbContextPool<DotnetOrderServiceDBContext>(
+            services.AddDbContextPool<DotNetOrderServiceDBContext>(
                 options => options.UseSqlServer(Configuration["ConnectionString:DefaultConnection1"] ?? "").UseSnakeCaseNamingConvention(),
                 poolSize
             );
@@ -142,7 +142,7 @@ namespace DotnetOrderService
             if (IsRedisEnable)
             {
                 services.AddDataProtection()
-                    .SetApplicationName(Configuration["App:Name"] ?? "DotnetOrderService")
+                    .SetApplicationName(Configuration["App:Name"] ?? "DotNetOrderService")
                     .SetDefaultKeyLifetime(TimeSpan.FromDays(60))
                     .PersistKeysToStackExchangeRedis(ConnectionMultiplexer.Connect(redisConnectionString), Configuration["App:DataProtectionKey"]);
 

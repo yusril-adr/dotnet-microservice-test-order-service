@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Constants.Storage
+namespace DotNetOrderService.Constants.Storage
 {
     public class StorageConstant
     {

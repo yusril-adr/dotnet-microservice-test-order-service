@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Infrastructure.Repositories
+namespace DotNetOrderService.Infrastructure.Repositories
 {
     public class PaginationResult<T>
     {

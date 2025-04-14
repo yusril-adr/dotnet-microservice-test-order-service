@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Domain.Logging.Services
+namespace DotNetOrderService.Domain.Logging.Services
 {
     public class LoggingService
     {

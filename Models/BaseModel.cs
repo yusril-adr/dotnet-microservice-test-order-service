@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Models
+namespace DotNetOrderService.Models
 {
     [Serializable]
     public class BaseModel

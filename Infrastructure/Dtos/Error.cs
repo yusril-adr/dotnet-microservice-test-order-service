@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
-namespace DotnetOrderService.Infrastructure.Dtos
+namespace DotNetOrderService.Infrastructure.Dtos
 {
     public class Validation
     {

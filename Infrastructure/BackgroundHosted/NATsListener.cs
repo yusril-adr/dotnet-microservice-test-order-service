@@ -1,6 +1,6 @@
-using DotnetOrderService.Constants.Logger;
+using DotNetOrderService.Constants.Logger;
 
-namespace DotnetOrderService.Infrastructure.BackgroundHosted
+namespace DotNetOrderService.Infrastructure.BackgroundHosted
 {
     public class NATsListener(
         ILoggerFactory loggerFactory,

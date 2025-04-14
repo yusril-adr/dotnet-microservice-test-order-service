@@ -1,10 +1,10 @@
-using DotnetOrderService.Constants.Event;
-using DotnetOrderService.Constants.Logger;
-using DotnetOrderService.Infrastructure.Integrations.NATs;
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Constants.Event;
+using DotNetOrderService.Constants.Logger;
+using DotNetOrderService.Infrastructure.Integrations.NATs;
+using DotNetOrderService.Infrastructure.Shareds;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace DotnetOrderService.Infrastructure.Events
+namespace DotNetOrderService.Infrastructure.Events
 {
     public class PublishNATsLoggingEvent : IAsyncActionFilter
     {

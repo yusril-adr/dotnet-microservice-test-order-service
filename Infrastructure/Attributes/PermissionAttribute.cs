@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Infrastructure.Attributes
+namespace DotNetOrderService.Infrastructure.Attributes
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, AllowMultiple = true)]
     public class PermissionsAttribute : Attribute

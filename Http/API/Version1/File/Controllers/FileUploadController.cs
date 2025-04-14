@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
-using DotnetOrderService.Domain.File.Services;
-using DotnetOrderService.Infrastructure.Helpers;
-using DotnetOrderService.Domain.File.Dto;
+using DotNetOrderService.Domain.File.Services;
+using DotNetOrderService.Infrastructure.Helpers;
+using DotNetOrderService.Domain.File.Dto;
 
-namespace DotnetOrderService.Http.API.Version1.File.Controllers
+namespace DotNetOrderService.Http.API.Version1.File.Controllers
 {
     [Route("api/v1/files")]
     [ApiController]

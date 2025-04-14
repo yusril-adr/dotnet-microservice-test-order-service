@@ -3,7 +3,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace DotnetOrderService.Infrastructure.Shareds
+namespace DotNetOrderService.Infrastructure.Shareds
 {
     public static class Utils
     {

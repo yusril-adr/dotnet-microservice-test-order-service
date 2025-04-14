@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace DotnetOrderService.Models
+namespace DotNetOrderService.Models
 {
     public class OrderProduct : BaseModel
     {

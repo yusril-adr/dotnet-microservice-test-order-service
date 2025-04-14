@@ -1,9 +1,9 @@
-using DotnetOrderService.Constants.Logger;
-using DotnetOrderService.Domain.Logging.Services;
-using DotnetOrderService.Infrastructure.Shareds;
-using DotnetOrderService.Infrastructure.Subscriptions;
+using DotNetOrderService.Constants.Logger;
+using DotNetOrderService.Domain.Logging.Services;
+using DotNetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Infrastructure.Subscriptions;
 
-namespace DotnetOrderService.Domain.Logging.Listeners
+namespace DotNetOrderService.Domain.Logging.Listeners
 {
     public class LoggingNATsListener(
         ILoggerFactory loggerFactory,

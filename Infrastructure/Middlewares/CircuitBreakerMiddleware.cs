@@ -1,10 +1,10 @@
 
-using DotnetOrderService.Immutables;
-using DotnetOrderService.Constants.CircuitBreaker;
+using DotNetOrderService.Immutables;
+using DotNetOrderService.Constants.CircuitBreaker;
 using Microsoft.EntityFrameworkCore;
-using DotnetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Infrastructure.Exceptions;
 
-namespace DotnetOrderService.Infrastructure.Middlewares
+namespace DotNetOrderService.Infrastructure.Middlewares
 {
 
     public class CircuitBreakerMiddleware

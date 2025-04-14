@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace DotnetOrderService.Domain.File.Dto
+namespace DotNetOrderService.Domain.File.Dto
 {
     public class FileUploadDto
     {

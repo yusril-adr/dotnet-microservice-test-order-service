@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Constants.Order
+namespace DotNetOrderService.Constants.Order
 {
   public enum OrderStatus
   {

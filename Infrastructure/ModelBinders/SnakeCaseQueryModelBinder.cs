@@ -3,7 +3,7 @@ using Microsoft.Extensions.Primitives;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace DotnetOrderService.Infrastructure.ModelBinder
+namespace DotNetOrderService.Infrastructure.ModelBinder
 {
     public partial class SnakeCaseQueryModelBinder : IModelBinder
     {

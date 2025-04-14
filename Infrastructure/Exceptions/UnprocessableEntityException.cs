@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Infrastructure.Exceptions;
+namespace DotNetOrderService.Infrastructure.Exceptions;
 
 public class UnprocessableEntityException(string message = "Unprocessable Entity") : Exception(message)
 {

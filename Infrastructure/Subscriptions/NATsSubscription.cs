@@ -1,5 +1,5 @@
 
-namespace DotnetOrderService.Infrastructure.Subscriptions
+namespace DotNetOrderService.Infrastructure.Subscriptions
 {
     public interface ISubscriptionActionAsync<in T>
     {

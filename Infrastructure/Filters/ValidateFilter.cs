@@ -1,7 +1,7 @@
-using DotnetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace DotnetOrderService.Infrastructure.Filters
+namespace DotNetOrderService.Infrastructure.Filters
 {
     public class ValidatorAttribute : ActionFilterAttribute
     {

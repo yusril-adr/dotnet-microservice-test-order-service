@@ -1,12 +1,12 @@
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Infrastructure.Shareds;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using System.Net;
 using System.Net.Mime;
-using DotnetOrderService.Infrastructure.Helpers;
-using DotnetOrderService.Infrastructure.Dtos;
+using DotNetOrderService.Infrastructure.Helpers;
+using DotNetOrderService.Infrastructure.Dtos;
 
-namespace DotnetOrderService.Infrastructure.Exceptions
+namespace DotNetOrderService.Infrastructure.Exceptions
 {
     public class HandlerException(
         RequestDelegate next,

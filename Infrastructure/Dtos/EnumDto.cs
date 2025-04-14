@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Infrastructure.Dtos
+namespace DotNetOrderService.Infrastructure.Dtos
 {
     public class EnumDto {
         public int Key { get; set; }

@@ -1,8 +1,8 @@
 using System.Net;
 using System.Runtime.Serialization;
-using DotnetOrderService.Infrastructure.Dtos;
+using DotNetOrderService.Infrastructure.Dtos;
 
-namespace DotnetOrderService.Infrastructure.Helpers
+namespace DotNetOrderService.Infrastructure.Helpers
 {
     public class ErrorUtility
     {

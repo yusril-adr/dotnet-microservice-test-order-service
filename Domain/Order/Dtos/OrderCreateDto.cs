@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace DotnetOrderService.Domain.Order.Dtos
+namespace DotNetOrderService.Domain.Order.Dtos
 {
     public class OrderCreateDto
     {

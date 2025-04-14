@@ -1,6 +1,6 @@
-using DotnetOrderService.Infrastructure.Dtos;
+using DotNetOrderService.Infrastructure.Dtos;
 
-namespace DotnetOrderService.Domain.Order.Dtos
+namespace DotNetOrderService.Domain.Order.Dtos
 {
     public class OrderResultDto
     {

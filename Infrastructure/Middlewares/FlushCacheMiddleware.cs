@@ -1,12 +1,12 @@
 
-using DotnetOrderService.Immutables;
-using DotnetOrderService.Constants.Cache;
-using DotnetOrderService.Constants.Logger;
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Immutables;
+using DotNetOrderService.Constants.Cache;
+using DotNetOrderService.Constants.Logger;
+using DotNetOrderService.Infrastructure.Shareds;
 using Microsoft.Extensions.Caching.Distributed;
 using StackExchange.Redis;
 
-namespace DotnetOrderService.Infrastructure.Middlewares
+namespace DotNetOrderService.Infrastructure.Middlewares
 {
     public class FlushCacheMiddleware(
         ILoggerFactory logger,

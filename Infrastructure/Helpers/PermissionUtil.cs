@@ -1,6 +1,6 @@
-using DotnetOrderService.Constants.Permission;
+using DotNetOrderService.Constants.Permission;
 
-namespace DotnetOrderService.Infrastructure.Helpers
+namespace DotNetOrderService.Infrastructure.Helpers
 {
   public static class PermissionUtil
   {

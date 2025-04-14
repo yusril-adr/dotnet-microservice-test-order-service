@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace DotnetOrderService.Infrastructure.Dtos
+namespace DotNetOrderService.Infrastructure.Dtos
 {
     public enum SortOrder
     {

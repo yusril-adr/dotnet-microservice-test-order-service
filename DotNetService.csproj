@@ -20,7 +20,7 @@
     <InvariantGlobalization>false</InvariantGlobalization>
     <ImplicitUsings>enable</ImplicitUsings>
     <RestoreSources>$(RestoreSources);https://api.nuget.org/v3/index.json</RestoreSources>
-    <RootNamespace>DotnetOrderService</RootNamespace>
+    <RootNamespace>DotNetOrderService</RootNamespace>
     <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
   </PropertyGroup>
 

@@ -1,7 +1,7 @@
-using DotnetOrderService.Infrastructure.Filters;
+using DotNetOrderService.Infrastructure.Filters;
 using RuangDeveloper.AspNetCore.Command;
 
-namespace DotnetOrderService
+namespace DotNetOrderService
 {
     public class Program
     {

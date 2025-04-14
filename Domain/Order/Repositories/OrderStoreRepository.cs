@@ -1,16 +1,16 @@
-using DotnetOrderService.Infrastructure.Databases;
-using DotnetOrderService.Infrastructure.Exceptions;
-using DotnetOrderService.Models;
+using DotNetOrderService.Infrastructure.Databases;
+using DotNetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Models;
 using Microsoft.EntityFrameworkCore;
 using DbDeleteConcurrencyException = Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException;
 
-namespace DotnetOrderService.Domain.Order.Repositories
+namespace DotNetOrderService.Domain.Order.Repositories
 {
     public class OrderStoreRepository(
-        DotnetOrderServiceDBContext context
+        DotNetOrderServiceDBContext context
     )
     {
-        private readonly DotnetOrderServiceDBContext _context = context;
+        private readonly DotNetOrderServiceDBContext _context = context;
 
         public async Task Create(
             Models.Order order,

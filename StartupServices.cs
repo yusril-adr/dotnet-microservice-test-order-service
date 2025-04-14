@@ -1,9 +1,9 @@
-using DotnetOrderService.Domain.File.Services;
-using DotnetOrderService.Domain.Logging.Services;
-using DotnetOrderService.Domain.Order.Services;
-using DotnetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Domain.File.Services;
+using DotNetOrderService.Domain.Logging.Services;
+using DotNetOrderService.Domain.Order.Services;
+using DotNetOrderService.Infrastructure.Shareds;
 
-namespace DotnetOrderService
+namespace DotNetOrderService
 {
     public partial class Startup
     {

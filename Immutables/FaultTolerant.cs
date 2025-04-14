@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Immutables {
+namespace DotNetOrderService.Immutables {
     public class FaultTolerant
     {
         public class Incident { 

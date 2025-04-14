@@ -1,12 +1,12 @@
 using Amazon;
 using Amazon.S3;
 using Amazon.S3.Model;
-using DotnetOrderService.Constants.Logger;
-using DotnetOrderService.Constants.Storage;
-using DotnetOrderService.Domain.File.Dto;
-using DotnetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Constants.Logger;
+using DotNetOrderService.Constants.Storage;
+using DotNetOrderService.Domain.File.Dto;
+using DotNetOrderService.Infrastructure.Exceptions;
 
-namespace DotnetOrderService.Infrastructure.Shareds
+namespace DotNetOrderService.Infrastructure.Shareds
 {
 
     public class StorageService

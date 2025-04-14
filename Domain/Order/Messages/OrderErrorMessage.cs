@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Domain.Order.Messages
+namespace DotNetOrderService.Domain.Order.Messages
 {
     public static class OrderErrorMessage
     {

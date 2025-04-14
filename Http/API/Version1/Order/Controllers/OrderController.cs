@@ -1,10 +1,10 @@
-using DotnetOrderService.Domain.Order.Dtos;
-using DotnetOrderService.Domain.Order.Services;
-using DotnetOrderService.Infrastructure.Helpers;
+using DotNetOrderService.Domain.Order.Dtos;
+using DotNetOrderService.Domain.Order.Services;
+using DotNetOrderService.Infrastructure.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 
-namespace DotnetOrderService.Http.API.Version1.Order.Controllers
+namespace DotNetOrderService.Http.API.Version1.Order.Controllers
 {
     [Route("api/v1/orders")]
     [ApiController]

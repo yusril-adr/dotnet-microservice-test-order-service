@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Caching.Distributed;
 
-namespace DotnetOrderService.Constants.Cache
+namespace DotNetOrderService.Constants.Cache
 {
     public class CacheConstant
     {

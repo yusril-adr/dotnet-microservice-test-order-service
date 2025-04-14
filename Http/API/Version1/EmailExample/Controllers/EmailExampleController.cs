@@ -1,10 +1,10 @@
-using DotnetOrderService.Infrastructure.Email;
-using DotnetOrderService.Infrastructure.Helpers;
+using DotNetOrderService.Infrastructure.Email;
+using DotNetOrderService.Infrastructure.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DotnetOrderService.Http.API.Version1.EmailExample.Controllers
+namespace DotNetOrderService.Http.API.Version1.EmailExample.Controllers
 {
     // This controller is used for testing only, please delete when using the boilerplate
     [Route("api/v1/emails")]

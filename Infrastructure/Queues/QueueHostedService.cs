@@ -1,6 +1,6 @@
-using DotnetOrderService.Constants.Logger;
+using DotNetOrderService.Constants.Logger;
 
-namespace DotnetOrderService.Infrastructure.Queues {
+namespace DotNetOrderService.Infrastructure.Queues {
 
     public class QueuedHostedService(
         BackgroundTaskQueue taskQueue,

@@ -1,4 +1,4 @@
-namespace DotnetOrderService.Infrastructure.Shareds
+namespace DotNetOrderService.Infrastructure.Shareds
 {
     public static class ResponseUtil
     {

@@ -1,10 +1,10 @@
 ﻿﻿using System.Linq.Expressions;
-using DotnetOrderService.Models;
+using DotNetOrderService.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DotnetOrderService.Infrastructure.Databases
+namespace DotNetOrderService.Infrastructure.Databases
 {
-    public partial class DotnetOrderServiceDBContext(DbContextOptions<DotnetOrderServiceDBContext> options) : DbContext(options)
+    public partial class DotNetOrderServiceDBContext(DbContextOptions<DotNetOrderServiceDBContext> options) : DbContext(options)
     {
         public DbSet<Order> Orders { get; set; }
 
