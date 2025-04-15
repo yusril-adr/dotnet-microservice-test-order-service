@@ -4,10 +4,15 @@ using DotNetOrderService.Domain.Order.Dtos;
 using DotNetOrderService.Infrastructure.Dtos;
 using DotNetOrderService.Domain.Order.Messages;
 using DotNetOrderService.Infrastructure.Shareds;
+using DotNetOrderService.Constants.Event;
+using DotNetOrderService.Infrastructure.Integrations.NATs;
+using document_generator.Infrastructure.Helpers;
+using DotNetOrderService.Constants.Order;
 
 namespace DotNetOrderService.Domain.Order.Services
 {
     public class OrderService(
+        NATsIntegration natsIntegration,
         OrderQueryRepository orderQueryRepository,
         OrderStoreRepository orderStoreRepository
     )
@@ -37,15 +42,41 @@ namespace DotNetOrderService.Domain.Order.Services
             
             var productIds = orderProducts.Select(op => op.ProductId).Distinct();
 
-            // TODO: Get productDetail from other Service
-            // Using dummy for temporary
-            var productDetails = productIds.Select(id => {
-                var dummyName = Utils.RandStr(5);
+            var productDetailsReplyRaw = await natsIntegration.PublishAndGetReply<object, object>(
+                natsIntegration.Subject(
+                    NATsEventModuleEnum.PRODUCT,
+                    NATsEventActionEnum.GET_BY_IDS,
+                    NATsEventStatusEnum.REQUEST
+                ),
+                Utils.JsonSerialize(new {
+                    data = productIds
+                })
+            );
 
-                return (id, dummyName);
-            }).ToList();
+            var productDetailsReply = Utils.ParseFromNATSReply<ResponseFormat<List<OrderProductDetailReplyDto>>>(productDetailsReplyRaw);
 
+            var productDetails = productDetailsReply.Data.Select(productDetail => (productDetail.Id, productDetail.Name)).ToList();
             await orderStoreRepository.Create(order, orderProducts, productDetails);
+
+            var checkoutProductStockReplyRaw = await natsIntegration.PublishAndGetReply<object, object>(
+                natsIntegration.Subject(
+                    NATsEventModuleEnum.PRODUCT,
+                    NATsEventActionEnum.UPDATE,
+                    NATsEventStatusEnum.REQUEST
+                ),
+                Utils.JsonSerialize(new {
+                    data = OrderCheckoutPublishDto.MapRepo(orderProducts)
+                })
+            );
+
+            var checkoutProductStockReply = Utils.ParseFromNATSReply<ResponseFormat<OrderCheckoutReplyDto>>(checkoutProductStockReplyRaw);
+
+            order.OrderStatus = checkoutProductStockReply.Success ? OrderStatus.Confirmed : OrderStatus.Rejected;
+            await orderStoreRepository.Update(order);
+
+            if (!checkoutProductStockReply.Success) {
+                throw new UnprocessableEntityException(checkoutProductStockReply.Message);
+            }
 
             return await this.Detail(order.Id);
         }

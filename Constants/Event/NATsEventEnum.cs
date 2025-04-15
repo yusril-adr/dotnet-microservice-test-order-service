@@ -42,9 +42,10 @@ namespace DotNetOrderService.Constants.Event
         ALL = NATsEventCommon.ALL,
         LOGGER,
         AUTH,
-        USER
+        USER,
 
         // Add more module here
+        PRODUCT
     }
     
     public enum NATsEventStreamModule

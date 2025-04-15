@@ -1,7 +1,9 @@
 using DotNetOrderService.Infrastructure.Databases;
 using DotNetOrderService.Infrastructure.Exceptions;
+using DotNetOrderService.Infrastructure.Shareds;
 using DotNetOrderService.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using DbDeleteConcurrencyException = Microsoft.EntityFrameworkCore.DbUpdateConcurrencyException;
 
 namespace DotNetOrderService.Domain.Order.Repositories
@@ -24,10 +26,12 @@ namespace DotNetOrderService.Domain.Order.Repositories
             {
                 order.OrderStatus = Constants.Order.OrderStatus.Pending;
                 await _context.Orders.AddAsync(order);
+                await _context.SaveChangesAsync(); // to made new order have id
 
                 if (productDetails?.Count > 0) {
                     var orderProductDetails = productDetails.Select(product => {
                         return new OrderProductDetail {
+                            OrderId = order.Id,
                             ProductId = product.Item1,
                             Name = product.Item2,
                         };
@@ -38,7 +42,7 @@ namespace DotNetOrderService.Domain.Order.Repositories
                     {
                         var validOrderProducts = new List<OrderProduct>();
                         orderProducts.ForEach((orderProduct) => {
-                            orderProduct.OrderId = order.Id;
+                            orderProduct.Order = order;
 
                             var orderProductDetail = orderProductDetails.FirstOrDefault(
                                 orderProductDetail => orderProductDetail.ProductId == orderProduct.ProductId
@@ -48,7 +52,7 @@ namespace DotNetOrderService.Domain.Order.Repositories
                                 return;
                             }
 
-                            orderProduct.OrderProductDetailId = orderProductDetail.Id;
+                            orderProduct.OrderProductDetail = orderProductDetail;
                             validOrderProducts.Add(orderProduct);
                         });
                         await _context.OrderProducts.AddRangeAsync(orderProducts);
@@ -63,6 +67,14 @@ namespace DotNetOrderService.Domain.Order.Repositories
                 await _context.Database.RollbackTransactionAsync();
                 throw;
             }
+        }
+    
+        public async Task Update(
+            Models.Order order
+        ) {
+            context.Orders.Update(order);
+
+            await context.SaveChangesAsync();
         }
     }
 }

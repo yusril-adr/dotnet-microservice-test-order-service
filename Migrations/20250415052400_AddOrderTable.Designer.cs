@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotNetOrderService.Migrations
 {
     [DbContext(typeof(DotNetOrderServiceDBContext))]
-    [Migration("20250414023815_AddOrderTable")]
+    [Migration("20250415052400_AddOrderTable")]
     partial class AddOrderTable
     {
         /// <inheritdoc />
@@ -174,7 +174,7 @@ namespace DotNetOrderService.Migrations
                         .HasConstraintName("fk_order_products_orders_order_id");
 
                     b.HasOne("DotNetOrderService.Models.OrderProductDetail", "OrderProductDetail")
-                        .WithMany()
+                        .WithMany("OrderProducts")
                         .HasForeignKey("OrderProductDetailId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
@@ -186,6 +186,11 @@ namespace DotNetOrderService.Migrations
                 });
 
             modelBuilder.Entity("DotNetOrderService.Models.Order", b =>
+                {
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("DotNetOrderService.Models.OrderProductDetail", b =>
                 {
                     b.Navigation("OrderProducts");
                 });

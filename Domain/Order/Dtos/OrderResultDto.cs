@@ -17,6 +17,10 @@ namespace DotNetOrderService.Domain.Order.Dtos
             OrderNumber = order.OrderNumber;
             TotalPrice = order.TotalPrice;
             Status = new EnumDto((int) order.OrderStatus, order.OrderStatus.ToString());
+
+            if (order.OrderProducts is not null) {
+                OrderProducts = OrderProductResultDto.MapRepo(order.OrderProducts.ToList());
+            }
         }
 
         public static List<OrderResultDto> MapRepo(List<Models.Order> data)
@@ -39,6 +43,10 @@ namespace DotNetOrderService.Domain.Order.Dtos
             if (orderProduct.OrderProductDetail is not null) {
                 Product = new OrderProductDetailResultDto(orderProduct.OrderProductDetail);
             }
+        }
+
+        public static List<OrderProductResultDto> MapRepo(List<Models.OrderProduct> orderProducts) {
+            return orderProducts.Select(orderProduct => new OrderProductResultDto(orderProduct)).ToList();
         }
     }
 

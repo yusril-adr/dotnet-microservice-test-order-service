@@ -171,7 +171,7 @@ namespace DotNetOrderService.Migrations
                         .HasConstraintName("fk_order_products_orders_order_id");
 
                     b.HasOne("DotNetOrderService.Models.OrderProductDetail", "OrderProductDetail")
-                        .WithMany()
+                        .WithMany("OrderProducts")
                         .HasForeignKey("OrderProductDetailId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
@@ -183,6 +183,11 @@ namespace DotNetOrderService.Migrations
                 });
 
             modelBuilder.Entity("DotNetOrderService.Models.Order", b =>
+                {
+                    b.Navigation("OrderProducts");
+                });
+
+            modelBuilder.Entity("DotNetOrderService.Models.OrderProductDetail", b =>
                 {
                     b.Navigation("OrderProducts");
                 });

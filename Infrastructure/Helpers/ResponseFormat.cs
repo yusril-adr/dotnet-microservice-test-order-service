@@ -8,3 +8,8 @@ public class ResponseFormat
     public dynamic Data { get; set; } = null;
     public dynamic Errors { get; set; } = null;
 }
+
+public class ResponseFormat<T>: ResponseFormat
+{
+    public new T Data { get; set; }
+}

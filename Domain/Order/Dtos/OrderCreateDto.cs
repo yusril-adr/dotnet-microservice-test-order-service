@@ -1,3 +1,4 @@
+using DotNetOrderService.Infrastructure.Shareds;
 using System.ComponentModel.DataAnnotations;
 
 namespace DotNetOrderService.Domain.Order.Dtos
@@ -5,15 +6,13 @@ namespace DotNetOrderService.Domain.Order.Dtos
     public class OrderCreateDto
     {
         [Required]
-        public decimal TotalPrice { get; set; }
-
-        [Required]
         [MinLength(1)]
         public List<OrderProductCreateDto> OrderProducts { get; set; } = new List<OrderProductCreateDto>();
 
         public static Models.Order Assign(OrderCreateDto orderCreateDto) {
             return new Models.Order {
-                TotalPrice = orderCreateDto.TotalPrice
+                OrderNumber = Utils.RandStr(15),
+                TotalPrice = orderCreateDto.OrderProducts.Sum(op => op.ProductItemPrice * op.ProductQuantity)
             };
         }
     }
